@@ -53,8 +53,6 @@ class $name;format="Camel"$ServiceTopActor( override implicit val tracer: Zipkin
   var serviceReference :mutable.HashMap[String,String ] = mutable.HashMap.empty[String,String]
   var serviceState :mutable.HashMap[String,String ] = mutable.HashMap.empty[String,String]
 
-  metadataRequired = List.empty[String]
-
   override def preStart(): Unit = {
     super.preStart() //initializeMetaDataConfig()
     println(self.path.name)
@@ -79,13 +77,11 @@ class $name;format="Camel"$ServiceTopActor( override implicit val tracer: Zipkin
       var cmdName =   requestBody.\("commandName").as[String]
       cmdName match {
 
-       case "deployMetaData" =>
-          super.metaDataDeployBehavior(s)
-
       }
   }
 
   override def metaDataDeployBehavior: Receive = super.metaDataDeployBehavior
-  override def receive = normalBehavior orElse metaDataDeployBehavior
+  override def receive = metaDataDeployBehavior orElse normalBehavior 
+  extendedRunningState = receive
 }
 
