@@ -6,8 +6,7 @@ object Dependencies {
   lazy val lazylogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
   lazy val scalahttp = "org.scalaj" %%"scalaj-http" % "2.4.1"
   lazy val diwocommon = "com.diwo" %% "servicesbase" % "1.0"
-  lazy val diwoservicesapi = "com.diwo" %% "servicesbase-api" % "1.0"
-  lazy val diwoservicesimpl = "com.diwo" %% "servicesbase-impl" % "1.0"
+ 
   lazy val orgjson = "org.json" % "json" % "20180130"
   lazy val memsql = "com.memsql" % "memsql-connector_2.11" % "2.0.6"
   lazy val mysqlconnector = "mysql" % "mysql-connector-java" % "5.1.16"
