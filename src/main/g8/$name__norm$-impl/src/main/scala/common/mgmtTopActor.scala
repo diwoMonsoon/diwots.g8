@@ -44,27 +44,12 @@ class mgmtTopActor extends BaseMgmtActor with LazyLogging {
     var requestDirective: JsValue = Json.toJson("{}")
     var requestId = getNewRequestId()
     var requestTS = getTimeStamp
-    var t: JsObject = requestDirective.as[JsObject] ++ Json.obj("requestId" -> s"$requestId") ++ Json.obj("requestTS" -> s"$requestTS")
+    var t: JsObject = requestDirective.as[JsObject] ++ Json.obj("requestId" -> "\"+requestId + "\"") ++ Json.obj("requestTS" ->"\""+ requestTS "\"")
     t.as[JsValue]
   }
 
   def initialize(): Unit = {
-//    logger.info("mgmtTopActor Initialized")
-//    implicit val metadataserializer  = Json.format[MetaDataActorReference]
-//    val metadataActorRef = Json.parse(metadataConfig).as[Seq[MetaDataActorReference]]
-//    for ( m <- metadataActorRef){
-//      MetaActor(m.configName) = m.serviceName
-//
-//      var requestBody :JsValue = Json.toJson("{}")
-//
-//      var newRequestBody: JsObject = requestBody.as[JsObject] ++ Json.obj("serviceName" -> s"${BaseService.serviceName}")       ++ Json.obj("configName" ->m.configName)         ++ Json.obj("configName" ->m.instanceId)
-//
-//      var request = new ServiceRequest = new ServiceRequest(getNewRequestDirective,newRequestBody, Json.toJson("{}"))
-//
-//      //requestMetaDataService(request)
-//
-//    }
-//    logger.info(MetaActor)
+
 
   }
 

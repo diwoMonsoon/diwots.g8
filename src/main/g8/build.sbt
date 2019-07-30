@@ -22,7 +22,7 @@ scalacOptions ++=Seq(
 
 
 lazy val `$name;format="norm"$` = (project in file("."))
-  .aggregate(`$name;format="norm"$-api`, `$name;format="norm"$-impl`, `$name;format="normalize"$-stream-api`, `$name;format="normalize"$-stream-impl`)
+  .aggregate(`$name;format="norm"$-api`, `$name;format="norm"$-impl`)
 
 lazy val `$name;format="norm"$-api` = (project in file("$name;format="norm"$-api"))
   .settings(
