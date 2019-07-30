@@ -20,7 +20,7 @@ import play.api.libs.json.Json
 import scala.concurrent.Future
 import scala.concurrent.duration._
 
-class $name;format="Camel"$ServiceSimulator extends Actor  {
+class $name;format="Camel"$ServiceTopActorSimulator extends Actor  {
 
   //  private val metadataInitActor = context.actorOf(Props(new MetadataInitActor), "MetadataInitActor")
   //  val MdBaseConnectActor = context.actorOf(Props(new JDBCConnectionActor), "JDBCConnectionActor1")
