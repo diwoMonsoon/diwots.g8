@@ -36,7 +36,7 @@ import brave.play.actor.ActorTraceSupport.{ActorTraceData, TraceableActorRef}
 
 
 
-class $name;format="Camel"$ServiceImpl extends BaseServiceImpl with servicesDiscovererService {
+class $name;format="Camel"$ServiceImpl extends BaseServiceImpl with  $name;format="Camel"$Service  {
 
   println("In $name;format="Camel"$ServiceImpl")
 
@@ -59,10 +59,10 @@ class $name;format="Camel"$ServiceImpl extends BaseServiceImpl with servicesDisc
   implicit val timeout = Timeout(5000, TimeUnit.MILLISECONDS)
 
 
-  serviceTopActor = system.actorOf(Props(Class.forName(serviceTopActorName),tracer),name ="DiscoverService")
+  serviceTopActor = system.actorOf(Props(Class.forName(serviceTopActorName),tracer),name ="$name;format="Camel"$Service_TopActor")
   TraceableActorRef(serviceTopActor) ! "initialize"
 
-  var simulatorActor =  system.actorOf(Props(Class.forName(simulatorActorName)),name = s"${$name;format="Camel".serviceName}_serviceTopActor")
+  var simulatorActor =  system.actorOf(Props(Class.forName(simulatorActorName)),name = "$name;format="Camel"$Service_serviceTopActor")
 
 
 
