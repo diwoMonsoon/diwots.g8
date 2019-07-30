@@ -25,7 +25,7 @@ object $name;format="Camel"$Service  {
   var serviceName = ConfigFactory.load().getString("ServiceName")
   val TOPIC_NAME = "" + serviceName
 }
-trait $name;format="Camel"$Service extends Service {
+trait $name;format="Camel"$Service extends BaseService {
 
 
 }
