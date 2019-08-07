@@ -62,6 +62,15 @@ class $name;format="Camel"$ServiceImpl extends BaseServiceImpl with  $name;forma
   serviceTopActor = system.actorOf(Props(Class.forName(serviceTopActorName),tracer),name ="$name;format="Camel"$Service_TopActor")
   TraceableActorRef(serviceTopActor) ! "initialize"
 
+  
+  val linkRefs: mutable.HashMap[String, ActorRef] = mutable.HashMap.empty[String, ActorRef]
+  //
+   linkRefs(URIGenerator.get("worker", "knowledge_manager")) = serviceTopActor
+  val topAgentConfigPath= "$name;format="Camel"$ServiceTopActor.conf"
+  TraceableActorRef(serviceTopActor) ! BaseInitialize(topAgentConfigPath, linkRefs)
+
+  
+  
   var simulatorActor =  system.actorOf(Props(Class.forName(simulatorActorName)),name = "$name;format="Camel"$Service_serviceTopActor")
 
 
