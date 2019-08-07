@@ -76,12 +76,22 @@ class $name;format="Camel"$ServiceTopActor( override implicit val tracer: Zipkin
       import scala.concurrent.ExecutionContext.Implicits.global
       var cmdName =   requestBody.\("commandName").as[String]
       cmdName match {
+        case "deployMetaData" =>
+          super.metaDataDeployBehavior(s)
+        //  extend the result from deploymentment in the implementation actor
+        var result :JsValue= Json.toJson("{}")
+          sender() ! result
+        
 
       }
   }
 
-  override def metaDataDeployBehavior: Receive = super.metaDataDeployBehavior
-  override def receive = metaDataDeployBehavior orElse normalBehavior 
+ // override def metaDataDeployBehavior: Receive = super.metaDataDeployBehavior
+  //override def receive = metaDataDeployBehavior orElse normalBehavior 
+  //handling of the metadata deployment is part of normal behaviour as it is part of generic ServiceRequest instead of 
+  // management request
+  
+  override def receive =  normalBehavior 
   extendedRunningState = receive
 }
 
