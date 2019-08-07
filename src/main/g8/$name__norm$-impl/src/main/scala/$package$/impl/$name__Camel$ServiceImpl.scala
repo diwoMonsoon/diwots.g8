@@ -11,7 +11,8 @@
 package $package$.impl
 
 import com.diwo.common.ServiceRequest
-import akka.actor.{ActorSystem, Props}
+import akka.actor._
+import com.diwo.common.{BaseInitialize, ServiceRequest, URIGenerator}
 import $package$.api
 import $package$.api.$name;format="Camel"$Service
 import com.diwo.common.api.BaseService
