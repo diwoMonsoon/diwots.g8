@@ -27,9 +27,9 @@ class ServiceTopActor( override implicit val tracer: ZipkinTraceServiceLike) ext
   var groupId: String=""
   var topic: String =""
   var simulateService = ConfigFactory.load().getBoolean("SimulateService")
-  val bufferedSource = scala.io.Source.fromInputStream(getClass().getClassLoader().getResourceAsStream("metadata.json"))
+ // val bufferedSource = scala.io.Source.fromInputStream(getClass().getClassLoader().getResourceAsStream("metadata.json"))
 
-  val metadataConfig = bufferedSource.mkString
+//  val metadataConfig = bufferedSource.mkString
   var MetaActor : mutable.HashMap[String,String] = mutable.HashMap.empty[String,String]
 
   implicit val format: Format[addServiceReference] = Json.format
@@ -71,7 +71,7 @@ println("ServiceTopActor")
      case _ =>
    }
 //
- override def receive = normalBehavior orElse metaDataDeployBehavior
+ override def receive = normalBehavior 
 }
 
 
