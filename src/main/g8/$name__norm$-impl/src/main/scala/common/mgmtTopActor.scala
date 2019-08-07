@@ -22,14 +22,14 @@ import com.typesafe.scalalogging.LazyLogging
 class mgmtTopActor extends BaseMgmtActor with LazyLogging {
 
 
-  logger.info(getClass().getClassLoader().getResource("metadata.json").getPath.toString)
+  //logger.info(getClass().getClassLoader().getResource("metadata.json").getPath.toString)
 
 
   //val bufferedSource = scala.io.Source.fromResource("metadata.json")
-  val bufferedSource = scala.io.Source.fromInputStream(getClass().getClassLoader().getResourceAsStream("metadata.json"))
+//  val bufferedSource = scala.io.Source.fromInputStream(getClass().getClassLoader().getResourceAsStream("metadata.json"))
 
 
-  val metadataConfig = bufferedSource.mkString
+//  val metadataConfig = bufferedSource.mkString
   var MetaActor : mutable.HashMap[String,String] = mutable.HashMap.empty[String,String]
   def getNewRequestId()={
     java.util.UUID.randomUUID.toString
