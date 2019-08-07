@@ -26,7 +26,7 @@ import scala.collection.immutable.Seq
 
 sealed trait $name;format="Camel"$Command[R] extends BaseCommand[R]
 
-object $name;format="Camel"$SerializerRegistryextends JsonSerializerRegistry {
+object $name;format="Camel"$SerializerRegistry extends JsonSerializerRegistry {
   override def serializers: Seq[JsonSerializer[_]] = Seq(
     JsonSerializer[Hello]
   )

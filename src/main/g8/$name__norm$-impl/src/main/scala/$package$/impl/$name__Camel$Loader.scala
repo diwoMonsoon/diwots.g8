@@ -33,9 +33,9 @@ import play.api.libs.ws.ahc.AhcWSComponents
         new $name;format="Camel"$Application(context) with LagomDevModeComponents
 
 
-    override def describeService = Some(readDescriptor[servicesDiscovererService])
+    override def describeService = Some(readDescriptor[$name;format="Camel"$Service])
   }
-  abstract class servicesDiscovererApplication(context: LagomApplicationContext)
+  abstract class $name;format="Camel"$Application(context: LagomApplicationContext)
     extends BaseApplication(context)
       with AhcWSComponents {
 
