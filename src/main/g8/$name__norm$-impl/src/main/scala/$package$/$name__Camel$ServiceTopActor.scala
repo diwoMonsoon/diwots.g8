@@ -58,14 +58,14 @@ class $name;format="Camel"$ServiceTopActor( override implicit val tracer: Zipkin
     println(self.path.name)
   }
 
-  override def preMetaDataLoad() ={
+  override def preMetaDataLoad(configName:String) ={
       println("preMetaDataLoad")
 
   }
-  override def reloadMetaData()={
+  override def reloadMetaData(configName:String)={
     println("reloadMetaData")
   }
-  override def postMetaDataLoad()={
+  override def postMetaDataLoad(configName:String)={
     println("postMetaDataLoad")
   }
 
