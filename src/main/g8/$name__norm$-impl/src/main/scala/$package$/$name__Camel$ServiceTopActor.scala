@@ -9,7 +9,7 @@
  *
  */
 
-package $package$.impl
+package $package$
 
 import java.io.{BufferedWriter, File, FileWriter}
 import java.sql.DriverManager
