@@ -52,6 +52,14 @@ class BaseServiceImpl  extends BaseService  {
  var mgmtTopActor = system.actorOf(Props(Class.forName(mgmtTopActorName)),name ="mgmtTopActor")
 
  mgmtTopActor ! "initialize"
+ 
+  val linkRefs: mutable.HashMap[String, ActorRef] = mutable.HashMap.empty[String, ActorRef]
+  //
+   linkRefs(URIGenerator.get("worker", "knowledge_manager")) = serviceTopActor
+  val topAgentConfigPath= "$serviceTopActorName.conf"
+  TraceableActorRef(serviceTopActor) ! BaseInitialize(topAgentConfigPath, linkRefs)
+
+
 
  override def hello(id: String) = ServiceCall { _ =>
    val responseHeader = ResponseHeader.Ok.withHeader("status","service response")
