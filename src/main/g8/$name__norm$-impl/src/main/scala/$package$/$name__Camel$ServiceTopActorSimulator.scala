@@ -9,7 +9,7 @@
  *
  */
 
-package com.diwo.test
+package $package$
 
 import akka.actor.Actor
 import akka.util.Timeout
