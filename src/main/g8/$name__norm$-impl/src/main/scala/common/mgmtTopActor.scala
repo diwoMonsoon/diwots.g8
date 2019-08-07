@@ -44,7 +44,7 @@ class mgmtTopActor extends BaseMgmtActor with LazyLogging {
     var requestDirective: JsValue = Json.toJson("{}")
     var requestId = getNewRequestId()
     var requestTS = getTimeStamp
-  var t: JsObject = requestDirective.as[JsObject] ++ Json.obj("requestId" ->  s"$requestId"  ) ++ Json.obj("requestTS" -> s"$requestTS")
+  var t: JsObject = requestDirective.as[JsObject] ++ Json.obj("requestId" ->  s"\$requestId"  ) ++ Json.obj("requestTS" -> s"\$requestTS")
     t.as[JsValue]
   }
 
