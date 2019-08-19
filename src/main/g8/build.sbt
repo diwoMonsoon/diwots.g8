@@ -58,7 +58,7 @@ lazy val `$name;format="norm"$-impl` = (project in file("$name;format="norm"$-im
     )
   )
   .settings(lagomForkedTestSettings)
-  .settings(lagomServiceHttpPort := 58208)
+  .settings(lagomServiceHttpPort := $locatorport$)
   .dependsOn(`$name;format="norm"$-api`)
 
 
