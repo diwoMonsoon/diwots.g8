@@ -71,6 +71,6 @@ def dockerSettings = Seq(
   dockerRepository := sys.props.get("docker.registry")
 )
 
-lagomServiceLocatorPort in ThisBuild := $locatorport
-lagomServiceGatewayPort in ThisBuild := $gatewayport
+lagomServiceLocatorPort in ThisBuild := $locatorport$
+lagomServiceGatewayPort in ThisBuild := $gatewayport$
 
