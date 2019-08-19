@@ -49,8 +49,6 @@ lazy val `$name;format="norm"$-impl` = (project in file("$name;format="norm"$-im
       scalaTest  ,
       Dependencies.lazylogging,
       Dependencies.scalahttp,
-      macwire,
-      scalaTest,
       Dependencies.kafka,
       Dependencies.gson,
       Dependencies.json4s,
@@ -73,6 +71,6 @@ def dockerSettings = Seq(
   dockerRepository := sys.props.get("docker.registry")
 )
 
-lagomServiceLocatorPort in ThisBuild := 9218
-lagomServiceGatewayPort in ThisBuild := 9818
+lagomServiceLocatorPort in ThisBuild := $locatorport
+lagomServiceGatewayPort in ThisBuild := $gatewayport
 
