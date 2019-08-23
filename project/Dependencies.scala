@@ -1,7 +1,10 @@
+import com.lightbend.lagom.core.LagomVersion
 import com.lightbend.lagom.sbt.LagomImport.{lagomScaladslAkkaDiscovery,lagomScaladslKafkaBroker,lagomScaladslKafkaClient,lagomScaladslPersistenceCassandra,lagomScaladslTestKit}
 import play.sbt.PlayImport.filters
 import sbt._
 object Dependencies {
+  val akkaManagementVersion="1.0.0"
+  
   lazy val kafka = "org.apache.kafka" %% "kafka" % "2.2.1"
   lazy val lazylogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
   lazy val scalahttp = "org.scalaj" %%"scalaj-http" % "2.4.1"
@@ -20,4 +23,9 @@ object Dependencies {
   lazy val playzipkin = "io.zipkin.brave.play" %% "play-zipkin-tracing-akka" % "3.0.1"
 
   lazy val akkatracingcore = "com.github.levkhomich" %% "akka-tracing-core" % "0.6.1"
+    val akkaDiscoveryKubernetesApi = "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % akkaManagementVersion
+  val lagomJavadslAkkaDiscovery = "com.lightbend.lagom" %% "lagom-javadsl-akka-discovery-service-locator" % LagomVersion.current
+  val lagomScaladslAkkaDiscovery = "com.lightbend.lagom" %% "lagom-scaladsl-akka-discovery-service-locator" % LagomVersion.current
+  val lagom_service_locator_zookeeper =  "com.lightbend.lagom" %% "lagom-service-locator-zookeeper" % "1.0.0-SNAPSHOT"
+
 }
