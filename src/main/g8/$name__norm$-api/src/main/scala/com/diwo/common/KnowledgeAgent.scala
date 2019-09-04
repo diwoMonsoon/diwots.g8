@@ -287,6 +287,7 @@ println("knowledgeObjectSpecs ",knowledgeObjectSpecs)
           println(metaDataObj.ko_id)
           if ( metaDataObj.ko_id.length > 0) {
             koIndex(uri) = metaDataObj
+            koIndex(uri).setContent (metaDataObj)
             responseObjects(uri) = metaDataObj
           }
         }
