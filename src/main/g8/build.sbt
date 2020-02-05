@@ -54,11 +54,7 @@ lazy val `$name;format="norm"$-impl` = (project in file("$name;format="norm"$-im
       Dependencies.json4s,
       Dependencies.json4sNative,
       "org.json" % "json" % "20180130",
-      Dependencies.playzipkin,
-      Dependencies.lagomScaladslAkkaDiscovery,
-      Dependencies.akkaDiscoveryKubernetesApi,
-      Dependencies.lagomJavadslAkkaDiscovery,
-      Dependencies.lagom_service_locator_zookeeper
+      Dependencies.playzipkin
     )
   )
   .settings(lagomForkedTestSettings)
