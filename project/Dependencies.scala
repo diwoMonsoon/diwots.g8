@@ -1,5 +1,4 @@
 import com.lightbend.lagom.core.LagomVersion
-import com.lightbend.lagom.sbt.LagomImport.{lagomScaladslAkkaDiscovery,lagomScaladslKafkaBroker,lagomScaladslKafkaClient,lagomScaladslPersistenceCassandra,lagomScaladslTestKit}
 import play.sbt.PlayImport.filters
 import sbt._
 object Dependencies {
